@@ -34,7 +34,7 @@ class FontPen {
         this.isDown = true;
         // 获取当前鼠标位置并设置为起始位置
         const { offsetX, offsetY } = event;
-        console.log('offset', offsetX, offsetY)
+        // console.log('offset', offsetX, offsetY)
         this.startX = offsetX || event.changedTouches[0].clientX;
         this.startY = offsetY || event.changedTouches[0].clientY;
     }
@@ -57,7 +57,7 @@ class FontPen {
         ctx.fillStyle = color;
         // 设置了随机字体大小
         ctx.font = `bold ${((fontSize-10) * Math.random()) + 10 + d * .3}px 华文仿宋`;
-        console.log('font', ((fontSize-10) * Math.random()) + 10 + d * .3)
+        // console.log('font', ((fontSize-10) * Math.random()) + 10 + d * .3)
         ctx.shadowColor = color;
         ctx.shadowBlur = 10;
         ctx.save();
@@ -106,5 +106,10 @@ class Application {
     ctx.clearRect(0, 0, w, h);
   }
 }
+
+const intFrameHeight = window.innerHeight;
+console.log('height', intFrameHeight)
+const body = document.getElementsByTagName('body')[0]
+body.style.height = intFrameHeight + 'px'
 
 window.onload = new Application();
