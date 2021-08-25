@@ -112,4 +112,8 @@ console.log('height', intFrameHeight)
 const body = document.getElementsByTagName('body')[0]
 body.style.height = intFrameHeight + 'px'
 
+document.body.addEventListener('touchMove', (e) => {
+  e.preventDefault()
+}, false)
+
 window.onload = new Application();
